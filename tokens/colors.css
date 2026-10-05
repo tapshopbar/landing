@@ -1,0 +1,97 @@
+/* ============================================================
+   TSB — Color
+   2026 NEW BRAND BI palette (authoritative, from TSB_color(RGB).ase):
+   the three pillars TAP·SHOP·BAR ride three primaries —
+   Red, Blue, Yellow — over an Ink/Paper ground. The hospitality
+   layer adds warm, low-light neutrals drawn from store photography.
+   ============================================================ */
+
+:root {
+  /* ---- Brand primaries (the venn-circle marks) ---- */
+  --tsb-red:    #F43131;   /* T — appetite, heritage, wine     */
+  --tsb-blue:   #156DFF;   /* S — precision, trust, the tap    */
+  --tsb-yellow: #FFC100;   /* B — energy, the late-night groove */
+  --tsb-black:  #000000;
+  --tsb-white:  #FFFFFF;
+
+  /* ---- Primary state ramps (oklch-harmonised) ---- */
+  --tsb-red-600:    #E11D1D;   /* hover  */
+  --tsb-red-700:    #B81414;   /* press  */
+  --tsb-red-100:    #FDE2E2;   /* tint surface */
+  --tsb-blue-600:   #0E55D6;
+  --tsb-blue-700:   #0A41A8;
+  --tsb-blue-100:   #DCE9FF;
+  --tsb-yellow-600: #E6A800;
+  --tsb-yellow-700: #B98600;
+  --tsb-yellow-100: #FFF1C7;
+
+  /* ---- Warm neutral ground (from the moody store light) ---- */
+  --tsb-ink:        #0E0D0B;   /* near-black, faintly warm */
+  --tsb-ink-800:    #1C1A16;
+  --tsb-ink-700:    #2C2925;   /* steel / charcoal */
+  --tsb-gray-600:   #555049;
+  --tsb-gray-500:   #7A736A;
+  --tsb-gray-400:   #A39B90;
+  --tsb-gray-300:   #C9C1B5;
+  --tsb-gray-200:   #E4DDD1;
+  --tsb-gray-100:   #EFE9DD;
+  --tsb-cream:      #F4EEE2;   /* warm card */
+  --tsb-paper:      #FAF7F0;   /* warm page  */
+
+  /* ---- Membership tiers ---- */
+  --tier-silver: #B9B4AC;
+  --tier-gold:   #E6A800;
+  --tier-black:  #0E0D0B;
+
+  /* ---- Semantic feedback ---- */
+  --color-success: #1E8E5A;
+  --color-warning: #E6A800;
+  --color-danger:  #E11D1D;
+  --color-info:    #156DFF;
+
+  /* ============ SEMANTIC ALIASES ============ */
+  /* Light surfaces (default) */
+  --color-bg:          var(--tsb-paper);
+  --color-surface:     var(--tsb-white);
+  --color-surface-2:   var(--tsb-cream);
+  --color-surface-inv: var(--tsb-ink);
+
+  --text-strong:  var(--tsb-ink);
+  --text-body:    var(--tsb-ink-800);
+  --text-muted:   var(--tsb-gray-500);
+  --text-faint:   var(--tsb-gray-400);
+  --text-on-dark: var(--tsb-paper);
+  --text-on-brand:var(--tsb-white);
+
+  --border:       var(--tsb-gray-200);
+  --border-strong:var(--tsb-ink);
+  --border-faint: var(--tsb-gray-100);
+
+  /* Brand accent = red is the lead voice */
+  --color-accent:        var(--tsb-red);
+  --color-accent-hover:  var(--tsb-red-600);
+  --color-accent-press:  var(--tsb-red-700);
+  --color-accent-tint:   var(--tsb-red-100);
+
+  /* Focus ring */
+  --ring: 0 0 0 3px color-mix(in srgb, var(--tsb-blue) 40%, transparent);
+}
+
+/* ---- Dark / bar mode: the late-night hospitality ground ---- */
+.tsb-dark,
+[data-theme="dark"] {
+  --color-bg:        var(--tsb-ink);
+  --color-surface:   var(--tsb-ink-800);
+  --color-surface-2: var(--tsb-ink-700);
+  --color-surface-inv: var(--tsb-paper);
+
+  --text-strong:  var(--tsb-white);
+  --text-body:    var(--tsb-gray-200);
+  --text-muted:   var(--tsb-gray-400);
+  --text-faint:   var(--tsb-gray-500);
+  --text-on-dark: var(--tsb-paper);
+
+  --border:        color-mix(in srgb, var(--tsb-white) 12%, transparent);
+  --border-strong: var(--tsb-white);
+  --border-faint:  color-mix(in srgb, var(--tsb-white) 7%, transparent);
+}

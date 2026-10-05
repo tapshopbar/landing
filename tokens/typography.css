@@ -1,0 +1,70 @@
+/* ============================================================
+   TSB — Typography
+   Montserrat carries display & headlines (it echoes the round,
+   geometric letterforms inside the T·S·B circle marks).
+   Pretendard runs body & UI (KR + EN). Spline Sans Mono labels
+   wine data — vintage, ABV, pour size, price.
+   Display is set TIGHT and is frequently UPPERCASE with tracking.
+   ============================================================ */
+
+:root {
+  --font-display: "Montserrat", "Pretendard", system-ui, sans-serif;
+  --font-sans:    "Pretendard", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    "Spline Sans Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Weights */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extra:    800;
+  --fw-black:    900;
+
+  /* Fluid display scale (poster-loud → readable) */
+  --fs-display:  clamp(3.25rem, 6vw + 1rem, 6rem);   /* hero  */
+  --fs-h1:       clamp(2.25rem, 3.5vw + 1rem, 3.5rem);
+  --fs-h2:       clamp(1.75rem, 2vw + 0.75rem, 2.5rem);
+  --fs-h3:       clamp(1.35rem, 1vw + 0.7rem, 1.75rem);
+  --fs-h4:       1.25rem;
+  --fs-lg:       1.125rem;
+  --fs-body:     1rem;
+  --fs-sm:       0.875rem;
+  --fs-xs:       0.75rem;
+  --fs-xxs:      0.6875rem;
+
+  /* Line heights */
+  --lh-tight:   0.98;   /* display lockups */
+  --lh-snug:    1.12;
+  --lh-heading: 1.2;
+  --lh-body:    1.6;
+  --lh-relaxed: 1.75;
+
+  /* Tracking */
+  --ls-tight:   -0.03em;  /* big display */
+  --ls-snug:    -0.015em;
+  --ls-normal:  0;
+  --ls-wide:    0.04em;
+  --ls-eyebrow: 0.18em;   /* uppercase labels */
+}
+
+/* Helper classes — used in specimens, components and kits */
+.tsb-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+}
+.tsb-h1 { font-family: var(--font-display); font-weight: var(--fw-extra); font-size: var(--fs-h1); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); }
+.tsb-h2 { font-family: var(--font-display); font-weight: var(--fw-bold);  font-size: var(--fs-h2); line-height: var(--lh-heading); letter-spacing: var(--ls-snug); }
+.tsb-h3 { font-family: var(--font-display); font-weight: var(--fw-bold);  font-size: var(--fs-h3); line-height: var(--lh-heading); }
+.tsb-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+}
+.tsb-body { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); font-weight: var(--fw-regular); }
+.tsb-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }

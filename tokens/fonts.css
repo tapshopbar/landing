@@ -1,0 +1,11 @@
+/* ============================================================
+   TSB — Fonts
+   The 2026 BI documents specify Montserrat (display / the round
+   logo letterforms) and Pretendard (KR + EN body / UI). A mono
+   face carries wine data (vintage, ABV, price).
+   NOTE: these are the open-license equivalents named in the brand
+   manual — the licensed studio masters are not in the package.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
