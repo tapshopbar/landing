@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="탭샵바 TAP SHOP BAR — wine is second americano">
+<meta property="og:description" content="낮에 커피 한 잔, 밤에 와인 한 잔. 탭에서 직접 따라 마시는 와인 바, 탭샵바.">
+<meta property="og:image" content="https://tapshopbar.github.io/landing/uploads/magok_069_tap-wall.jpg">
+<meta property="og:url" content="https://tapshopbar.github.io/landing/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="uploads/tsb_symbol1_color.png">
+<title>탭샵바 TAP SHOP BAR</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>TAP SHOP BAR — wine is second americano</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tokens/fonts.css">
+<link rel="stylesheet" href="tokens/colors.css">
+<link rel="stylesheet" href="tokens/typography.css">
+<link rel="stylesheet" href="tokens/spacing.css">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF7F0;color:#0E0D0B;font-family:"Pretendard",system-ui,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:#0E0D0B;text-decoration:none}
+a:hover{color:#156DFF}
+::selection{background:#FFC100;color:#0E0D0B}
+</style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 clamp(16px,3vw,40px);background:rgba(250,247,240,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)">
+  <a href="#top" style="display:flex;align-items:center" aria-label="TAP SHOP BAR 홈">
+    <img src="uploads/tsb_wordmark_h.png" alt="TAP SHOP BAR" style="height:clamp(16px,1.6vw,20px);width:auto;display:block">
+  </a>
+  <sc-if value="{{ showNavLinks }}" hint-placeholder-val="{{ true }}">
+    <nav style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:500;letter-spacing:-0.01em">
+      <a href="#moments">Moments</a>
+      <a href="#how">이용 방법</a>
+      <a href="#menu">페어링 메뉴</a>
+      <a href="#space">공간</a>
+      <a href="#stores">매장</a>
+    </nav>
+  </sc-if>
+  <a href="#stores" style="display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 20px;border-radius:999px;background:#0E0D0B;color:#FAF7F0;font-size:14px;font-weight:600;white-space:nowrap" style-hover="background:#156DFF;color:#FFFFFF">가까운 매장 찾기 <span aria-hidden="true">→</span></a>
+</header>
+
+<main id="top" style="padding-top:72px">
+
+  <section data-screen-label="01 Hero" style="height:calc(100svh - 72px);min-height:560px;box-sizing:border-box;padding:{{ heroInset }}">
+    <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:{{ heroRadius }};background:#1C1A16">
+      <sc-for list="{{ heroSlides }}" as="s" hint-placeholder-count="1">
+        <div style="position:absolute;inset:0;opacity:{{ s.opacity }};transition:opacity 1400ms cubic-bezier(0.65,0,0.35,1)">
+          <video data-tsb="hero" src="{{ s.video }}" poster="{{ s.poster }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ s.scale }});transition:transform 6500ms linear"></video>
+        </div>
+      </sc-for>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,11,0.25) 0%,rgba(14,13,11,0) 30%,rgba(14,13,11,0.15) 55%,rgba(14,13,11,0.72) 100%);pointer-events:none"></div>
+
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(24px,4vw,64px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px;color:#FFFFFF">
+        <div style="display:flex;flex-direction:column;gap:clamp(16px,2vw,28px);max-width:900px">
+          <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.92">Tap · Shop · Bar — wine is second americano</div>
+          <h1 style="margin:0;font-weight:800;font-size:clamp(52px,8.4vw,140px);line-height:0.98;letter-spacing:-0.045em">오늘,<br>한 잔의 이유.</h1>
+          <p style="margin:0;font-size:clamp(16px,1.4vw,20px);line-height:1.6;font-weight:500;max-width:520px;text-wrap:pretty">낮에 커피 한 잔, 밤에 와인 한 잔.<br>어떤 하루에도 가볍게 들르는 와인 바, 탭샵바.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+            <a href="#stores" style="display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 28px;border-radius:999px;background:#FFFFFF;color:#0E0D0B;font-size:16px;font-weight:700" style-hover="background:#FFC100;color:#0E0D0B">가까운 매장 찾기 <span aria-hidden="true">→</span></a>
+            <a href="#how" style="display:inline-flex;align-items:center;height:56px;padding:0 24px;border-radius:999px;border:1px solid rgba(255,255,255,0.6);color:#FFFFFF;font-size:16px;font-weight:600" style-hover="background:rgba(255,255,255,0.14);color:#FFFFFF">이용 방법 보기</a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;min-width:220px">
+          <sc-for list="{{ heroSlides }}" as="s" hint-placeholder-count="5">
+            <button onClick="{{ s.go }}" style="all:unset;cursor:pointer;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;opacity:{{ s.labelOpacity }};transition:opacity 400ms">
+              <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em">{{ s.num }}</span>
+              <span style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:13px;font-weight:600;letter-spacing:-0.01em">{{ s.label }}</span>
+                <span style="display:block;height:2px;background:rgba(255,255,255,0.25);border-radius:2px;overflow:hidden"><span style="display:block;height:100%;width:{{ s.bar }};background:#FFFFFF;transition:{{ s.barTransition }}"></span></span>
+              </span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="02 Intro" style="padding:clamp(96px,14vw,200px) clamp(20px,5vw,64px) clamp(56px,8vw,112px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px">
+    <div style="display:flex;gap:6px" aria-hidden="true">
+      <span style="width:12px;height:12px;border-radius:50%;background:#F43131"></span>
+      <span style="width:12px;height:12px;border-radius:50%;background:#156DFF"></span>
+      <span style="width:12px;height:12px;border-radius:50%;background:#FFC100"></span>
+    </div>
+    <h2 style="margin:0;font-weight:800;font-size:clamp(40px,6.4vw,104px);line-height:1.04;letter-spacing:-0.045em;max-width:1200px">낮에 커피 한 잔,<br>밤에 와인 한 잔.</h2>
+    <p style="margin:0;font-family:var(--font-display);font-weight:600;font-size:clamp(15px,1.3vw,18px);letter-spacing:0.02em;color:var(--text-muted)">wine is second americano</p>
+    <p style="margin:8px 0 0;max-width:620px;font-size:clamp(16px,1.3vw,19px);line-height:1.75;color:var(--text-body);text-wrap:pretty">탭샵바는 디스펜서에서 와인을 직접 따라 마시는 와인 바입니다. 30ml로 가볍게 맛보고, 마음에 들면 80ml 한 잔으로. 매장에서 고른 보틀은 콜키지 없이, 와인을 위해 만든 요리와 함께 즐기세요.</p>
+  </section>
+
+  <section ref="{{ band1Ref }}" style="padding:0 0 clamp(96px,12vw,180px)">
+    <div style="width:100%;height:clamp(420px,82vh,900px);overflow:hidden;clip-path:{{ band1Clip }};will-change:clip-path">
+      <img src="uploads/magok_069_tap-wall.jpg" alt="탭샵바 마곡점 탭 디스펜서 월" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale({{ band1Scale }});will-change:transform">
+    </div>
+  </section>
+
+  <section id="moments" data-screen-label="03 Moments" style="padding:0 clamp(16px,3vw,40px) clamp(96px,12vw,180px);max-width:1680px;margin:0 auto;box-sizing:border-box">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 clamp(4px,1vw,16px) clamp(32px,4vw,56px)">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)">Your Moments</div>
+        <h2 style="margin:0;font-weight:800;font-size:clamp(36px,4.6vw,72px);line-height:1.06;letter-spacing:-0.04em">어떤 하루에도,<br>탭샵바.</h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:16px;line-height:1.7;color:var(--text-muted);text-wrap:pretty">모임, 회식, 혼자만의 저녁, 점심, 그리고 오후의 카페. 카드에 마우스를 올려 그 순간을 확인해 보세요.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.2vw,18px)">
+      <sc-for list="{{ moments }}" as="m" hint-placeholder-count="5">
+        <article onMouseEnter="{{ m.enter }}" onMouseLeave="{{ m.leave }}" onClick="{{ m.enter }}" style="grid-column:{{ m.span }};position:relative;aspect-ratio:{{ m.ratio }};border-radius:20px;overflow:hidden;background:#1C1A16;cursor:pointer">
+          <img src="{{ m.img }}" alt="{{ m.title }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ m.scale }});transition:transform 900ms cubic-bezier(0.22,1,0.36,1)">
+          <video data-tsb="card" data-idx="{{ m.idx }}" src="{{ m.video }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ m.videoOpacity }};transition:opacity 500ms"></video>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,11,0) 45%,rgba(14,13,11,0.78) 100%);pointer-events:none"></div>
+          <div style="position:absolute;top:18px;left:20px;right:20px;display:flex;justify-content:space-between;color:#FFFFFF;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase">
+            <span>{{ m.num }}</span><span>{{ m.time }}</span>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,2vw,28px);display:flex;flex-direction:column;gap:8px;color:#FFFFFF">
+            <span style="display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase"><span style="width:8px;height:8px;border-radius:50%;background:{{ m.dot }}"></span>{{ m.en }}</span>
+            <h3 style="margin:0;font-size:clamp(22px,2.2vw,34px);font-weight:800;letter-spacing:-0.035em;line-height:1.15">{{ m.title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;opacity:0.9;max-width:420px">{{ m.line }}</p>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="how" data-screen-label="04 How it works" style="background:#FFFFFF;padding:clamp(96px,12vw,180px) clamp(20px,4vw,64px)">
+    <div style="max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(72px,10vw,160px)">
+      <div style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)">How it works</div>
+        <h2 style="margin:0;font-weight:800;font-size:clamp(36px,4.6vw,72px);line-height:1.06;letter-spacing:-0.04em">따르고, 고르고, 곁들이고.</h2>
+      </div>
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+        <div style="display:flex;flex-wrap:wrap;flex-direction:{{ st.dir }};align-items:center;gap:clamp(32px,6vw,112px)">
+          <div style="flex:1 1 420px;min-width:0;position:relative">
+            <div style="aspect-ratio:4/5;max-height:760px;width:100%;border-radius:24px;overflow:hidden">
+              <img src="{{ st.img }}" alt="{{ st.word }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ st.pos }};display:block">
+            </div>
+            <sc-if value="{{ st.hasImg2 }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;left:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,24px);width:52%;aspect-ratio:3/2;border-radius:16px;overflow:hidden;border:6px solid #FFFFFF;box-shadow:var(--shadow-lg)">
+                <img src="{{ st.img2 }}" alt="탭 디스펜서 와인 정보 화면" style="width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+            </sc-if>
+          </div>
+          <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;align-items:center;gap:16px">
+              <span style="width:clamp(40px,4vw,56px);height:clamp(40px,4vw,56px);border-radius:50%;background:{{ st.color }};display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:clamp(18px,1.8vw,24px);color:#0E0D0B">{{ st.letter }}</span>
+              <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;color:var(--text-muted)">STEP {{ st.num }}</span>
+            </div>
+            <div style="font-family:var(--font-display);font-weight:900;font-size:clamp(72px,10vw,168px);line-height:0.88;letter-spacing:-0.04em">{{ st.word }}</div>
+            <h3 style="margin:0;font-size:clamp(24px,2.4vw,36px);font-weight:800;letter-spacing:-0.035em;line-height:1.25">{{ st.title }}</h3>
+            <p style="margin:0;font-size:17px;line-height:1.75;color:var(--text-body);max-width:460px;text-wrap:pretty">{{ st.body }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ st.chips }}" as="c" hint-placeholder-count="2">
+                <span style="display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;border:1px solid #0E0D0B;font-family:var(--font-mono);font-size:13px;font-weight:500">{{ c }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="menu" data-screen-label="05 Signature pairing" style="padding:clamp(96px,12vw,180px) clamp(20px,4vw,64px)">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)">Signature Pairing</div>
+          <h2 style="margin:0;font-weight:800;font-size:clamp(36px,4.6vw,72px);line-height:1.06;letter-spacing:-0.04em">와인을 위해<br>만든 접시.</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;border-bottom:1px solid #0E0D0B">
+          <sc-for list="{{ dishes }}" as="d" hint-placeholder-count="4">
+            <div onMouseEnter="{{ d.enter }}" style="display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:baseline;padding:clamp(20px,2.4vw,32px) 0;border-top:1px solid #0E0D0B;cursor:default;opacity:{{ d.opacity }};transition:opacity 300ms">
+              <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;color:var(--text-muted)">{{ d.num }}</span>
+              <span style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:clamp(22px,2.4vw,34px);font-weight:800;letter-spacing:-0.035em;line-height:1.2">{{ d.kr }}</span>
+                <span style="font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:0.04em;color:var(--text-muted)">{{ d.en }}</span>
+              </span>
+              <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;text-align:right;color:var(--text-body)">{{ d.pair }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:sticky;top:96px;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:#1C1A16">
+        <sc-for list="{{ dishes }}" as="d" hint-placeholder-count="1">
+          <img src="{{ d.img }}" alt="{{ d.kr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ d.pos }};transform:scale({{ d.zoom }});transform-origin:{{ d.pos }};opacity:{{ d.imgOpacity }};transition:opacity 600ms"></sc-for>
+        <div style="position:absolute;left:20px;bottom:20px;display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:999px;background:rgba(250,247,240,0.94);font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase">{{ menuCaption }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="space" data-screen-label="06 Space" style="background:#FFFFFF;padding:clamp(96px,12vw,180px) clamp(20px,4vw,64px)">
+    <div style="max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(56px,7vw,120px)">
+      <div style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)">The Space</div>
+            <h2 style="margin:0;font-weight:800;font-size:clamp(36px,4.6vw,72px);line-height:1.06;letter-spacing:-0.04em">둘이어도, 열이어도<br>편안한 자리.</h2>
+          </div>
+          <p style="margin:0;max-width:400px;font-size:16px;line-height:1.7;color:var(--text-muted);text-wrap:pretty">붉은 벽돌과 우드 테이블, 넉넉한 소파석과 바 테이블. 가벼운 한 잔부터 긴 모임까지 자리를 고를 수 있습니다.</p>
+        </div>
+        <div style="width:100%;aspect-ratio:16/9;max-height:860px;border-radius:24px;overflow:hidden">
+          <img src="uploads/magok_100_hall.jpg" alt="탭샵바 마곡점 홀" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="width:10px;height:10px;border-radius:50%;background:#F43131"></span>
+            <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)">Private Room · Magok</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="display:inline-flex;align-self:flex-start;align-items:center;height:30px;padding:0 12px;border-radius:999px;border:1px solid #0E0D0B;font-size:13px;font-weight:700">마곡점</span>
+            <h3 style="margin:0;font-size:clamp(28px,3vw,48px);font-weight:800;letter-spacing:-0.04em;line-height:1.15">모임과 회식을 위한<br>프라이빗 룸.</h3>
+          </div>
+          <dl style="margin:0;display:flex;flex-direction:column;border-bottom:1px solid var(--border);max-width:480px">
+            <div style="display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--border)">
+              <dt style="font-size:14px;font-weight:700">인원</dt>
+              <dd style="margin:0;font-size:15px;line-height:1.65;color:var(--text-body)">4~8인<br><span style="color:var(--text-muted)">9~10인도 가능하지만 자리가 조금 좁을 수 있습니다. 보조 의자는 없습니다.</span></dd>
+            </div>
+            <div style="display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--border)">
+              <dt style="font-size:14px;font-weight:700">예약</dt>
+              <dd style="margin:0;font-size:15px;line-height:1.65;color:var(--text-body)">네이버 예약으로 요청 후 매장에서 확정</dd>
+            </div>
+            <div style="display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--border)">
+              <dt style="font-size:14px;font-weight:700">주차</dt>
+              <dd style="margin:0;font-size:15px;line-height:1.65;color:var(--text-body)">VL르웨스트 지하주차장 5·6층, 2시간 무료<br><span style="color:var(--text-muted)">B동 엘리베이터 이용</span></dd>
+            </div>
+          </dl>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a href="https://m.booking.naver.com/booking/6/bizes/1713764/items/7996202" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;background:#0E0D0B;color:#FAF7F0;font-size:15px;font-weight:600" style-hover="background:#156DFF;color:#FFFFFF">단체·회식 예약 문의 <span aria-hidden="true">↗</span></a>
+            <a href="tel:0507-1425-8809" style="display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:999px;border:1px solid #0E0D0B;color:#0E0D0B;font-size:15px;font-weight:600" style-hover="background:#0E0D0B;color:#FAF7F0">전화 문의 0507-1425-8809</a>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(10px,1.2vw,18px)">
+          <div style="aspect-ratio:4/5;border-radius:20px;overflow:hidden">
+            <img src="uploads/magok_110_room-front.jpg" alt="프라이빗 룸 전면" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:20px;overflow:hidden;margin-top:clamp(40px,6vw,96px)">
+            <img src="uploads/magok_113_room-inside.jpg" alt="프라이빗 룸 내부" style="width:100%;height:100%;object-fit:cover;object-position:35% 50%;display:block">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section ref="{{ band2Ref }}" style="padding:clamp(96px,12vw,180px) 0" style="padding:0 0 clamp(96px,12vw,180px)">
+    <div style="width:100%;height:clamp(420px,86vh,940px);overflow:hidden;clip-path:{{ band2Clip }};will-change:clip-path">
+      <img src="uploads/store_wine_is_second_americano.jpg" alt="wine is second americano 레터링" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale({{ band2Scale }});will-change:transform">
+    </div>
+  </section>
+
+  <section id="stores" data-screen-label="06 Stores" style="padding:0 clamp(20px,4vw,64px) clamp(96px,12vw,180px)">
+    <div style="max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)">Find your TSB</div>
+          <h2 style="margin:0;font-weight:800;font-size:clamp(36px,4.6vw,72px);line-height:1.06;letter-spacing:-0.04em">가까운 탭샵바에서<br>오늘의 한 잔을.</h2>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--text-muted)">서울 4개 직영점 · 4 stores in Seoul</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,1.6vw,24px)">
+        <sc-for list="{{ stores }}" as="s" hint-placeholder-count="4">
+          <a href="{{ s.url }}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:20px;color:#0E0D0B" style-hover="color:#0E0D0B">
+            <div style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--tsb-cream)">
+              <img src="{{ s.img }}" alt="{{ s.name }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ s.pos }}">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;padding:0 4px">
+              <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted)">{{ s.num }} · {{ s.area }}</span>
+              <span style="font-size:clamp(22px,1.8vw,28px);font-weight:800;letter-spacing:-0.035em;line-height:1.2">{{ s.name }}</span>
+              <span style="font-size:15px;line-height:1.6;color:var(--text-body);min-height:48px">{{ s.addr }}</span>
+              <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;height:44px;padding:0 18px;margin-top:6px;border-radius:999px;background:#0E0D0B;color:#FAF7F0;font-size:14px;font-weight:600">네이버 지도에서 보기 <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer data-screen-label="07 Footer" style="background:var(--tsb-cream);padding:clamp(64px,8vw,120px) clamp(20px,4vw,64px) 40px">
+  <div style="max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,6vw,96px)">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:40px">
+      <img src="uploads/tsb_symbol1_color.png" alt="TSB" style="height:clamp(56px,6vw,88px);width:auto;display:block">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px)">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted)">Instagram</span>
+          <a href="https://www.instagram.com/tap.shop.bar/" target="_blank" rel="noopener" style="font-size:20px;font-weight:700;letter-spacing:-0.02em">@tap.shop.bar ↗</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted)">Stores</span>
+          <a href="#stores" style="font-size:20px;font-weight:700;letter-spacing:-0.02em">서울 4개 직영점 →</a>
+        </div>
+      </div>
+    </div>
+    <img src="uploads/tsb_wordmark_h.png" alt="TAP SHOP BAR" style="width:100%;height:auto;display:block">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:13px;color:var(--text-muted)">
+      <span>wine is second americano · 낮에 커피 한 잔, 밤에 와인 한 잔</span>
+      <span>© TSB Korea</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: 0, hovered: -1, dish: 0, w: 1440, y: 0, b1: 0, b2: 0, tick: 0 };
+  band1 = React.createRef();
+  band2 = React.createRef();
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState(s => ({ active: (s.active + 1) % 5, tick: s.tick + 1 })), 5500);
+    this.onScroll = () => {
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => { this.raf = null; this.measure(); });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.measure();
+    setTimeout(() => this.setState({ tick: 1 }), 60);
+    this.kick();
+  }
+  componentDidUpdate(_, prev) {
+    if (prev.hovered !== this.state.hovered) {
+      document.querySelectorAll('video[data-tsb="card"]').forEach(v => {
+        const i = +v.dataset.idx;
+        if (i === this.state.hovered) { v.muted = true; v.currentTime = 0; v.play().catch(() => {}); } else v.pause();
+      });
+    }
+    if (prev.active !== this.state.active) this.kick();
+  }
+  kick() {
+    document.querySelectorAll('video[data-tsb="hero"]').forEach(v => { v.muted = true; v.play().catch(() => {}); });
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  prog(ref) {
+    const el = ref.current; if (!el) return 0;
+    const r = el.getBoundingClientRect(), vh = window.innerHeight;
+    return Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.85)));
+  }
+  measure() {
+    this.setState({ w: window.innerWidth, y: window.scrollY, b1: this.prog(this.band1), b2: this.prog(this.band2) });
+  }
+  clip(p) {
+    const e = 1 - Math.pow(1 - p, 3), k = 1 - e;
+    return `inset(${(k * 10).toFixed(2)}% ${(k * 22).toFixed(2)}% round ${(k * 28).toFixed(1)}px)`;
+  }
+
+  renderVals() {
+    const { active, hovered, dish, w, y, b1, b2, tick } = this.state;
+    const mobile = w < 860;
+    const hp = Math.min(1, y / 360);
+    const scenes = [
+      { label: '친구들과의 모임', en: 'Night with Friends', time: 'PM 8:00', line: '잔을 부딪히는 소리로 시작되는 저녁.', dot: '#F43131' },
+      { label: '회사 회식', en: 'Team Dinner', time: 'PM 7:30', line: '스테이크와 굴, 그리고 오늘 수고한 우리에게 건배.', dot: '#156DFF' },
+      { label: '혼술', en: 'A Glass for One', time: 'PM 9:30', line: '퇴근길, 나를 위해 직접 따르는 화이트 한 잔.', dot: '#FFC100' },
+      { label: '점심, 친구와', en: 'Lunch Break', time: 'PM 12:30', line: '햇살 좋은 점심, 파스타 옆에 가벼운 글라스 와인.', dot: '#F43131' },
+      { label: '카페에서', en: 'Second Americano', time: 'PM 4:00', line: '오후의 아메리카노가 저녁의 와인이 되는 순간.', dot: '#156DFF' }
+    ];
+    const heroSlides = scenes.map((s, i) => ({
+      num: '0' + (i + 1), label: s.label,
+      video: `assets/gen/moment_${i + 1}.mp4`, poster: `assets/gen/moment_${i + 1}.jpg`,
+      opacity: i === active ? 1 : 0,
+      scale: i === active && tick ? 1.06 : 1,
+      labelOpacity: i === active ? 1 : 0.55,
+      bar: i === active && tick ? '100%' : '0%',
+      barTransition: i === active ? 'width 5500ms linear' : 'none',
+      go: () => this.setState(st => ({ active: i, tick: st.tick + 1 }))
+    }));
+    const spans = mobile ? ['span 6', 'span 6', 'span 6', 'span 6', 'span 6'] : ['span 3', 'span 3', 'span 2', 'span 2', 'span 2'];
+    const moments = scenes.map((s, i) => ({
+      idx: i, num: '0' + (i + 1), title: s.label, en: s.en, time: s.time, line: s.line, dot: s.dot,
+      img: `assets/gen/moment_${i + 1}.jpg`, video: `assets/gen/moment_${i + 1}.mp4`,
+      span: spans[i], ratio: mobile ? '4 / 3' : (i < 2 ? '16 / 10' : '4 / 5'),
+      scale: hovered === i ? 1.05 : 1, videoOpacity: hovered === i ? 1 : 0,
+      enter: () => this.setState({ hovered: i }),
+      leave: () => this.setState({ hovered: -1 })
+    }));
+    const steps0 = [
+      { num: '01', letter: 'T', word: 'TAP', color: '#F43131', img: 'uploads/magok_010_tap-pour.jpg', pos: '58% 50%', img2: 'uploads/magok_004_tap-screen.jpg', hasImg2: true, dir: 'row',
+        title: '디스펜서에서 직접 따르세요', body: '마음에 드는 와인 아래 잔을 두고 버튼만 누르면 됩니다. 처음 보는 와인은 30ml 테이스팅으로 가볍게, 마음에 들면 80ml 한 잔으로.', chips: ['테이스팅 30ml', '한 잔 80ml'] },
+      { num: '02', letter: 'S', word: 'SHOP', color: '#156DFF', img: 'uploads/store_bottle_pick.jpg', dir: 'row-reverse',
+        title: '보틀을 직접 고르세요', body: '매장 가득 진열된 와인 중 오늘의 보틀을 골라 테이블로 가져오세요. 콜키지 없이 그 자리에서 바로 즐길 수 있습니다.', chips: ['콜키지 프리', 'Take-out'] },
+      { num: '03', letter: 'B', word: 'BAR', color: '#FFC100', img: 'uploads/food_oysters.jpg', dir: 'row',
+        title: '페어링 요리를 곁들이세요', body: '와인과 가장 잘 어울리는 요리를 키친에서 바로 만들어 냅니다. 신선한 굴부터 스테이크, 파스타까지.', chips: ['Pairing Kitchen'] }
+    ];
+    const steps = steps0.map(s => ({ pos: '50% 50%', hasImg2: false, img2: '', ...s }));
+    const dishList = [
+      { kr: '삼배체 굴', en: 'Triploid Oysters', pair: 'WHITE · SPARKLING', img: 'uploads/food_oysters.jpg', pos: '50% 50%', zoom: 1 },
+      { kr: '프라임 채끝 스테이크', en: 'Prime Striploin Steak', pair: 'RED', img: 'uploads/menu_steak.jpg', pos: '50% 48%', zoom: 1 },
+      { kr: '스파이시 앤초비 쉬림프 파스타', en: 'Spicy Anchovy & Shrimp Pasta', pair: 'WHITE · RED', img: 'uploads/menu_pasta.jpg', pos: '50% 55%', zoom: 1 },
+      { kr: '하몽 부라타', en: 'Jamón & Burrata', pair: 'ROSÉ · SPARKLING', img: 'uploads/menu_jamon_burrata.jpg', pos: '72% 70%', zoom: 1.7 }
+    ];
+    const dishes = dishList.map((d, i) => ({ ...d, num: '0' + (i + 1), opacity: dish === i ? 1 : 0.42, imgOpacity: dish === i ? 1 : 0, enter: () => this.setState({ dish: i }) }));
+    const stores = [
+      { num: '01', area: 'Jongno', name: '청계천삼일빌딩점', addr: '서울 종로구 청계천로 85 삼일빌딩 지하1층', url: 'https://naver.me/Ghbu11vt', img: 'uploads/store_cheonggye_island.jpg' },
+      { num: '02', area: 'Mapo', name: '상암MBC점', addr: '서울 마포구 성암로 255 MBC몰 플라자 1층', url: 'https://naver.me/5hoZk5fh', img: 'uploads/store_sangam_exterior.jpg' },
+      { num: '03', area: 'Gangseo', name: '마곡점', addr: '서울 강서구 마곡중앙3로 16, VL르웨스트 B동 1층 105호', url: 'https://naver.me/GwfJltAG', img: 'uploads/magok_057_exterior-night.jpg', pos: '45% 50%' },
+      { num: '04', area: 'Jung-gu', name: '동대문두타점', addr: '서울 중구 장충단로 275 두타몰 B2', url: 'https://naver.me/x0UPI3oU', img: 'uploads/store_dongdaemun.jpg' }
+    ].map(s => ({ pos: '50% 50%', ...s }));
+
+    return {
+      showNavLinks: !mobile,
+      heroInset: `${(1 - hp) * (mobile ? 10 : 18)}px`,
+      heroRadius: `${(1 - hp) * (mobile ? 16 : 28)}px`,
+      heroSlides, moments, steps, dishes, stores,
+      menuCaption: dishList[dish].en,
+      band1Ref: this.band1, band2Ref: this.band2,
+      band1Clip: this.clip(b1), band2Clip: this.clip(b2),
+      band1Scale: (1.14 - 0.14 * b1).toFixed(3), band2Scale: (1.14 - 0.14 * b2).toFixed(3)
+    };
+  }
+}
+</script>
+</body>
+</html>
